@@ -9,7 +9,14 @@ const client = new bitcoin.Client({
   timeout: 30000
 });
 
-client.cmd('getinfo', '*', 6, function(err, info, resHeaders){
+var batch = [];
+for (var i = 0; i < 10; ++i) {
+  batch.push({
+    method: 'getnewaddress',
+    params: ['myaccount']
+  });
+}
+client.cmd(batch, function(err, address, resHeaders) {
   if (err) return console.log(err);
-  console.log('Bitcoind Info :', info);
+  console.log('Address:', address);
 });
