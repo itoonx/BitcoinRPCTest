@@ -1,4 +1,4 @@
-Test Bitcoind Test RPC Connection
+Bitcoind Test RPC Connection
 
 ## Using
 
