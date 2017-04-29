@@ -2,7 +2,7 @@ const bitcoin = require('bitcoin');
 
 // all config options are optional
 const client = new bitcoin.Client({
-  host: '162.168.1.6',
+  host: 'localhost',
   port: 8332,
   user: 'itoonx',
   pass: 'BLOCKCHAIN_ONLY_WE_TRUTH',
