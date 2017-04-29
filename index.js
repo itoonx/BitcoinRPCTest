@@ -13,12 +13,3 @@ client.cmd('getinfo', '*', 6, function(err, info, resHeaders){
   if (err) return console.log(err);
   console.log('Bitcoind Info :', info);
 });
-
-client.getBalance('*', 6, function(err, balance, resHeaders) {
-  if (err) return console.log(err);
-  console.log('Balance:', balance);
-});
-
-if (info && balance) {
-    console.log('RPC Connection OK!!!');
-}
