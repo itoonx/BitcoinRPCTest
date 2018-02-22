@@ -1,11 +1,17 @@
 const bitcoin = require('bitcoin');
+const env = require('./environment.json');
+
+
+if (!env) {
+	return console.log('Not found environment.json, Please make sure you have the rpc configuration file');
+}
 
 // all config options are optional
 const client = new bitcoin.Client({
-  host: 'localhost',
-  port: 8332,
-  user: 'itoonx',
-  pass: 'BLOCKCHAIN_ONLY_WE_TRUTH',
+  host: env.rpchost,
+  port: env.rpcport,
+  user: env.rpcusername,
+  pass: env.rpcpassword,
   timeout: 30000
 });
 
